@@ -2,7 +2,6 @@ import pg, { Pool } from "pg";
 import config from "./index.js";
 import logger from "./logger.js";
 
-const { Pool } = pg;
 /**
  *  Postgress DataBase manager/connector
  */
