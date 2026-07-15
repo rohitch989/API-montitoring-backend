@@ -1,18 +1,19 @@
-import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import express from "express";
+import cookieParser from 'cookie-parser';
 import config from "./shared/config/index.js";
 import logger from "./shared/config/logger.js";
 import mongodb from "./shared/config/mongodb.js";
 import postgres from "./shared/config/postgres.js";
 import rabbitmq from "./shared/config/rabbitmq.js";
-import cookieParser from 'cookie-parser';
 import errorHandler from "./shared/middlewares/errorHandler.js";
 import ResponseFormatter from "./shared/utils/responseFormatter.js";
 
 
 // Routers
 import authRouter from "./services/auth/routes/authRouter.js";
+import clientRouter from "./services/client/routes/clientRoutes.js";
 
 /**
  * Initialize Express app
@@ -87,7 +88,7 @@ app.get("/", (req, res) => {
  * API Routes
  */
 app.use("/api/auth", authRouter);
-
+app.use("/api", clientRouter)
 /**
  * 404 Handler
  */
