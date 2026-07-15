@@ -6,6 +6,7 @@ import logger from "./shared/config/logger.js";
 import mongodb from "./shared/config/mongodb.js";
 import postgres from "./shared/config/postgres.js";
 import rabbitmq from "./shared/config/rabbitmq.js";
+import cookieParser from 'cookie-parser';
 import errorHandler from "./shared/middlewares/errorHandler.js";
 import ResponseFormatter from "./shared/utils/responseFormatter.js";
 
@@ -28,6 +29,7 @@ app.use(
     credentials: true,
   }),
 );
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
