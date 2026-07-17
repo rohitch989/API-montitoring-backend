@@ -15,7 +15,7 @@ import ResponseFormatter from "./shared/utils/responseFormatter.js";
 import authRouter from "./services/auth/routes/authRouter.js";
 import clientRouter from "./services/client/routes/clientRoutes.js";
 import ingestRouter from "./services/ingest/routes/ingestRoutes.js";
-
+import analyticsRouter from "./services/analytics/routes/analyticsRoutes.js"
 /**
  * Initialize Express app
  */
@@ -89,7 +89,8 @@ app.get("/", (req, res) => {
  * API Routes
  */
 app.use("/api/auth", authRouter);
-app.use("/api", clientRouter)
+app.use("/api", clientRouter);
+app.use("/api/analytics", analyticsRouter)
 app.use("/api/hit",ingestRouter);
 
 /**
