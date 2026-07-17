@@ -1,6 +1,6 @@
 import { ApiHitRepository } from "../repository/ApiHitRepository.js";
 import { MetricsRepository } from "../repository/MetricsRepository.js";
-import { ProcessorService } from "../service/ProcessorService.js";
+import { ProcessorService } from "../service/processorService.js";
 
 import ApiHit from "../../../shared/models/ApiHits.js";
 import postgres from "../../../shared/config/postgres.js";
